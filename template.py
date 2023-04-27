@@ -4,7 +4,7 @@ from pathlib import Path
 import logging
 
 while True:
-    project_name = input("Enter your project name ")
+    project_name = input("Enter your project name : ")
     if project_name !='':
         break
 
@@ -23,7 +23,7 @@ list_of_files = [
     f"{project_name}/pipeline/__init__.py",
     f"{project_name}/utils/__init__.py",
     f"config/config.yaml",
-    "schema.yaml"
+    "schema.yaml",
     "setup.py",
     "main.py",
     "requirements.txt",
@@ -36,7 +36,7 @@ for file_path in list_of_files:
     if filedir !="":
         os.makedirs(filedir, exist_ok=True)
         logging.info(f"Creating new directory at : {filedir} for file:{filename}")
-    if (not os.path.exists(file_path)) or (os.path.getsize(filename) == 0):
+    if (not os.path.exists(file_path)) or (os.path.getsize(file_path) == 0):
         with open(file_path, "w") as f:
             pass
             logging.info(f"Creating new file at :{filedir} for file: {filename}")
